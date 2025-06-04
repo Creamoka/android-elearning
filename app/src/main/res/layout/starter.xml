@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/starterLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Background image atas -->
+    <ImageView
+        android:id="@+id/bgTopImage"
+        android:layout_width="444dp"
+        android:layout_height="296dp"
+        android:src="@drawable/vector"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:translationX="-42dp"
+        android:layout_marginTop="15dp" />
+
+    <!-- Vector image tengah -->
+    <ImageView
+        android:id="@+id/vectorImage"
+        android:layout_width="257dp"
+        android:layout_height="253dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginStart="93dp"
+        android:src="@drawable/vector"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/white_border" />
+
+    <!-- Panel bawah biru -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="#3DB2FF"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Garis panel indicator -->
+        <View
+            android:id="@+id/indicatorLine"
+            android:layout_width="70dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FFEDDA"
+            android:alpha="0.8"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"/>
+
+        <!-- Judul utama -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Learn the local language  for free!"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/indicatorLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
+
+        <!-- Deskripsi -->
+        <TextView
+            android:id="@+id/descText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Learn all local languages interactively at your fingertips!"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:lineSpacingExtra="12dp"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Indicator dot -->
+        <LinearLayout
+            android:id="@+id/dotIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/descText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <View
+                android:layout_width="29dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/dot_active" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/dot_inactive" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/dot_inactive" />
+        </LinearLayout>
+
+        <!-- Tombol Register dan Login -->
+        <LinearLayout
+            android:id="@+id/buttonGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/dotIndicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="131dp"
+                android:layout_height="58dp"
+                android:text="Register"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="#000000"
+                android:background="@drawable/btn_outline"
+                android:drawableEnd="@drawable/caretright"
+                android:padding="10dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="131dp"
+                android:layout_height="58dp"
+                android:text="Login"
+                android:textColor="#FFEDDA"
+                android:backgroundTint="#000000"
+                android:drawableEnd="@drawable/caretright"
+                android:layout_marginStart="10dp"
+                android:padding="10dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

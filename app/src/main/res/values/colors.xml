@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Primary Colors -->
+    <color name="color_primary_100">#0074CE</color>
+    <color name="color_primary_80">#0693F1</color>
+    <color name="color_primary_60">#3DB2FF</color>
+    <color name="color_primary_40">#B8E1FF</color>
+    <color name="color_primary_20">#EFF8FF</color>
+
+    <!-- Secondary Colors -->
+    <color name="color_secondary_100">#FFC107</color>
+    <color name="color_secondary_80">#FFD899</color>
+    <color name="color_secondary_60">#FFE5BB</color>
+    <color name="color_secondary_40">#FFF2DD</color>
+    <color name="color_secondary_20">#FFF9EF</color>
+
+    <!-- Black Colors -->
+    <color name="color_black_100">#111111</color>
+    <color name="color_black_80">#707070</color>
+    <color name="color_black_60">#A0A0A0</color>
+    <color name="color_black_40">#CFCFCF</color>
+    <color name="color_black_20">#F3F3F3</color>
+    <color name="color_black_0">#FFFFFF</color>
+
+    <!-- Semantic Colors -->
+    <color name="color_success_100">#99CC29</color>
+    <color name="color_warning_100">#FFD237</color>
+    <color name="color_error_100">#FF4B4C</color>
+    <color name="color_info_100">#3870FF</color>
 </resources>
