@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:padding="24dp">
+
+            <!-- Judul -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DAFTAR"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Subjudul -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buat Akunmu Untuk Memulai\nPetualangan Belajarmu."
+                android:textAlignment="center"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Nama Lengkap -->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Lengkap"
+                android:inputType="textPersonName"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Email -->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="alamatemail@gmail.com"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Kata Sandi -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/passwordEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kata Sandi"
+                    android:inputType="textPassword"
+                    android:background="@drawable/input_background"
+                    android:paddingEnd="48dp"
+                    android:padding="12dp" />
+
+                <ImageView
+                    android:id="@+id/showPasswordIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/eye"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </RelativeLayout>
+
+            <!-- Konfirmasi Kata Sandi -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <EditText
+                    android:id="@+id/confirmPasswordEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Konfirmasi Kata Sandi"
+                    android:inputType="textPassword"
+                    android:background="@drawable/input_background"
+                    android:paddingEnd="48dp"
+                    android:padding="12dp" />
+
+                <ImageView
+                    android:id="@+id/showConfirmPasswordIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/eye"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </RelativeLayout>
+
+            <!-- Tombol Daftar -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DAFTAR"
+                android:backgroundTint="#000000"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Divider -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar Dengan"
+                android:textColor="#555555"
+                android:textSize="14sp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Tombol Daftar Dengan Google -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Google"
+                android:background="@drawable/button_border"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Link Masuk -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudah memiliki akun? Masuk disini"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
