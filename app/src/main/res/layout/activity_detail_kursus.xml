@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header / Gambar dengan ikon play -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#F5F5F5">
+
+            <!-- Tombol back -->
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_back" />
+
+            <!-- Tombol bookmark -->
+            <ImageButton
+                android:id="@+id/btnBookmark"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_circle_gray"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_bookmark" />
+
+            <!-- Ikon play -->
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_play"
+                android:background="@drawable/bg_circle_gray"
+                android:padding="16dp" />
+        </RelativeLayout>
+
+        <!-- Konten -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Judul -->
+            <TextView
+                android:text="Belajar Kotlin dasar"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Creator -->
+            <TextView
+                android:text="CodingWithArrafi"
+                android:textSize="14sp"
+                android:textColor="#555555"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Penonton -->
+            <TextView
+                android:text="👥 3,4k penonton telah menyaksikan materi ini"
+                android:textSize="12sp"
+                android:textColor="#777777"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Subjudul -->
+            <TextView
+                android:text="Detail Kursus"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Deskripsi -->
+            <TextView
+                android:text="Pelajari dasar-dasar bahasa pemrograman Kotlin, bahasa modern yang digunakan untuk mengembangkan aplikasi Android. Materi disusun khusus untuk pemula yang ingin mulai ngoding dengan gaya penulisan yang bersih, simpel, dan efisien."
+                android:textSize="14sp"
+                android:textColor="#444444"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Info -->
+            <TextView
+                android:text="📚 50+ Sesi"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="⏱ 4 Minggu"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="🎓 Sertifikat Online"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Kemampuan -->
+            <TextView
+                android:text="Kemampuan"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="Pemrograman"
+                    android:background="@drawable/bg_chip"
+                    android:padding="8dp"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Logika"
+                    android:background="@drawable/bg_chip"
+                    android:padding="8dp"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Struktur"
+                    android:background="@drawable/bg_chip"
+                    android:padding="8dp"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Tombol Ikuti Kursus -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IKUTI KURSUS"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#000000"
+                android:layout_marginTop="45dp"
+                android:padding="16dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
