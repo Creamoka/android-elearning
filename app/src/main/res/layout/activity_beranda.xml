@@ -7,7 +7,10 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="12dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:layout_above="@+id/bottom_navigation">
 
         <LinearLayout
@@ -15,15 +18,29 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Salam -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Header selamat datang -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Selamat Datang Arrafi"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginBottom="12dp" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Selamat Datang Arrafi"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/chat"
+                    android:tint="#000000" />
+            </LinearLayout>
 
             <!-- Search Bar -->
             <LinearLayout
@@ -40,7 +57,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:hint="Mencari"
+                    android:hint="Cari"
                     android:background="@android:color/transparent"
                     android:textColor="#000000"
                     android:textSize="14sp" />
@@ -52,14 +69,15 @@
                     android:tint="#888888" />
             </LinearLayout>
 
-            <!-- Tonton & Belajar -->
+            <!-- tonton dan belajar -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tonton & Belajar"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_marginBottom="8dp" />
+                android:textColor="#000000"
+                android:layout_marginBottom="12dp" />
 
             <include layout="@layout/item_video_card"
                 android:layout_marginBottom="8dp" />
@@ -67,44 +85,69 @@
                 android:layout_marginBottom="24dp" />
 
             <!-- Kategori -->
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kategori"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_marginBottom="12dp" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Kategori"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Semua"
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    android:layout_marginStart="8dp"
+                    android:paddingStart="4dp" />
+            </LinearLayout>
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:overScrollMode="never"
-                android:scrollbars="none">
+                android:scrollbars="none"
+                android:paddingEnd="16dp"
+                android:clipToPadding="false">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="16dp">
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:text="Desain Grafis"
                         android:background="@drawable/button_category"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="12sp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="12dp"
+                        android:minWidth="0dp"
                         android:paddingHorizontal="16dp" />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
-                        android:text="Pemograman"
+                        android:text="Pemrograman"
                         android:background="@drawable/button_category"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="12sp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="12dp"
+                        android:minWidth="0dp"
                         android:paddingHorizontal="16dp" />
 
                     <Button
@@ -112,19 +155,47 @@
                         android:layout_height="36dp"
                         android:text="Alat"
                         android:background="@drawable/button_category"
-                        android:textColor="#000000"
+                        android:textColor="#FFFFFF"
                         android:textSize="12sp"
+                        android:minWidth="0dp"
                         android:paddingHorizontal="16dp" />
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <!-- Disarankan Untukmu -->
+            <!-- Disarankan untukmu -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Disarankan Untukmu"
                 android:textStyle="bold"
                 android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Grid item -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp">
+                <include layout="@layout/item_grid_card" />
+                <include layout="@layout/item_grid_card" />
+                <include layout="@layout/item_grid_card" />
+                <include layout="@layout/item_grid_card" />
+            </GridLayout>
+
+            <!-- Kursus terbaik -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kursus Terbaik"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#000000"
                 android:layout_marginBottom="12dp" />
 
             <!-- Grid item -->
@@ -137,7 +208,6 @@
                 android:useDefaultMargins="true"
                 android:layout_gravity="center"
                 android:layout_marginBottom="80dp">
-
                 <include layout="@layout/item_grid_card" />
                 <include layout="@layout/item_grid_card" />
                 <include layout="@layout/item_grid_card" />
@@ -147,42 +217,114 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation -->
+    <!-- Navbar -->
     <LinearLayout
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:background="@drawable/bottom_nav_background"
-        android:paddingHorizontal="24dp"
-        android:gravity="center_vertical">
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical"
+        android:elevation="8dp">
 
-        <ImageButton
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/home"
-            android:background="@android:color/transparent"
-            android:contentDescription="Home"
-            android:tint="#000000" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="4dp">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/chat"
-            android:background="@android:color/transparent"
-            android:contentDescription="Chat"
-            android:tint="#000000" />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/home"
+                android:tint="#000000"
+                android:scaleType="centerInside" />
 
-        <ImageButton
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beranda"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/profile"
-            android:background="@android:color/transparent"
-            android:contentDescription="Profile"
-            android:tint="#000000" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="4dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/loupe"
+                android:tint="#666666"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kursus"
+                android:textSize="10sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="4dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/chat"
+                android:tint="#666666"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chat"
+                android:textSize="10sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="4dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/profile"
+                android:tint="#666666"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="10sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </RelativeLayout>
