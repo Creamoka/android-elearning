@@ -83,36 +83,6 @@
                 android:layout_marginBottom="24dp" />
 
             <!-- Menu Items -->
-            <!-- Payment Method -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingVertical="16dp"
-                android:background="?android:attr/selectableItemBackground">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_payment"
-                    android:tint="#666666" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Payment Method"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
-                    android:layout_marginStart="16dp" />
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_arrow_right"
-                    android:tint="#666666" />
-            </LinearLayout>
 
             <!-- My Certificates -->
             <LinearLayout
@@ -133,7 +103,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="My Certificates"
+                    android:text="Sertifikat Saya"
                     android:textSize="16sp"
                     android:textColor="#000000"
                     android:layout_marginStart="16dp" />
@@ -164,7 +134,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Help Center"
+                    android:text="Pusat Bantuan"
                     android:textSize="16sp"
                     android:textColor="#000000"
                     android:layout_marginStart="16dp" />
@@ -195,7 +165,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Invite Friends"
+                    android:text="Undang Teman"
                     android:textSize="16sp"
                     android:textColor="#000000"
                     android:layout_marginStart="16dp" />
@@ -226,7 +196,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Log out"
+                    android:text="Keluar"
                     android:textSize="16sp"
                     android:textColor="#000000"
                     android:layout_marginStart="16dp" />
@@ -307,30 +277,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Beranda"
-                android:textSize="10sp"
-                android:textColor="#666666"
-                android:layout_marginTop="2dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="4dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/loupe"
-                android:tint="#666666"
-                android:scaleType="centerInside" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kursus"
                 android:textSize="10sp"
                 android:textColor="#666666"
                 android:layout_marginTop="2dp" />
