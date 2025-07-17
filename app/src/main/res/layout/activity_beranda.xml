@@ -224,58 +224,29 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:background="@drawable/bottom_nav_background"
-        android:paddingHorizontal="16dp"
-        android:gravity="center_vertical"
-        android:elevation="8dp">
+        android:background="#F5F5F5"
+        android:gravity="center">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/nav_home"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="24dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="4dp">
+            android:src="@drawable/ic_home" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/home"
-                android:tint="#666666"
-                android:scaleType="centerInside" />
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/nav_chat"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="24dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="4dp">
+            android:src="@drawable/ic_chat" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/chat"
-                android:tint="#000000"
-                android:scaleType="centerInside" />
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/nav_profile"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="24dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="4dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/profile"
-                android:tint="#666666"
-                android:scaleType="centerInside" />
-        </LinearLayout>
+            android:src="@drawable/ic_profile" />
 
     </LinearLayout>
 
