@@ -57,7 +57,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp">
+                android:layout_marginBottom="8dp">
 
                 <EditText
                     android:id="@+id/passwordEditText"
@@ -81,6 +81,19 @@
                     android:clickable="true"
                     android:focusable="true"/>
             </RelativeLayout>
+
+            <!-- Forgot Password Link -->
+            <TextView
+                android:id="@+id/forgotPasswordLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Lupa Kata Sandi?"
+                android:textColor="#888888"
+                android:textSize="11sp" />
 
             <!-- Tombol Masuk -->
             <Button
