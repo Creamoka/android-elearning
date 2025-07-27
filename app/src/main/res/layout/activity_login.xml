@@ -84,6 +84,7 @@
 
             <!-- Tombol Masuk -->
             <Button
+                android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="MASUK"
@@ -103,6 +104,7 @@
 
             <!-- Tombol Masuk Dengan Google -->
             <Button
+                android:id="@+id/google"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Google"
@@ -112,6 +114,7 @@
 
             <!-- Link daftar -->
             <TextView
+                android:id="@+id/daftar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Belum memiliki akun? Daftar disini"

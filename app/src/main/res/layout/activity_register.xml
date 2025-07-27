@@ -50,6 +50,7 @@
 
             <!-- Email -->
             <EditText
+                android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="alamatemail@gmail.com"
@@ -65,7 +66,7 @@
                 android:layout_marginBottom="16dp">
 
                 <EditText
-                    android:id="@+id/passwordEdit"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Kata Sandi"
@@ -93,7 +94,7 @@
                 android:layout_marginBottom="24dp">
 
                 <EditText
-                    android:id="@+id/confirmPasswordEdit"
+                    android:id="@+id/confirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Konfirmasi Kata Sandi"
