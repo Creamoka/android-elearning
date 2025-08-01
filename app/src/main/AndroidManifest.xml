@@ -22,13 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".BerandaActivity" />
-        <activity android:name=".ChatActivity" />
-        <activity android:name=".KursusActivity" />
-        <activity android:name=".DetailKursusActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".LoginActivity" android:exported="true" />
+        <activity android:name=".RegisterActivity" android:exported="true" />
+        <activity android:name=".BerandaActivity" android:exported="true" />
+        <activity android:name=".ChatActivity" android:exported="true" />
+        <activity android:name=".KursusActivity" android:exported="true" />
+        <activity android:name=".DetailKursusActivity" android:exported="true" />
+        <activity android:name=".ProfileActivity" android:exported="true" />
+
     </application>
 
 </manifest>
