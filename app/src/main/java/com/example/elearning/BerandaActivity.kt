@@ -16,7 +16,7 @@ class BerandaActivity : AppCompatActivity() {
         val namaUser = intent.getStringExtra("NAMA_USER") ?: "Pengguna"
 
         // Tampilkan di TextView selamat datang
-        val txtSelamatDatang = findViewById<TextView>(R.id.txt_selamat_datang)
+        val txtSelamatDatang = findViewById<TextView>(R.id.welcome)
         txtSelamatDatang.text = "Selamat Datang $namaUser"
 
         // Navigasi bottom bar

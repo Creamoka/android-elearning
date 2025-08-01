@@ -67,6 +67,7 @@
                 </LinearLayout>
 
                 <ImageView
+                    android:id="@+id/edit_profile"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_edit"
@@ -100,6 +101,7 @@
                     android:tint="#666666" />
 
                 <TextView
+                    android:id="@+id/sertifikat"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -193,6 +195,7 @@
                     android:tint="#666666" />
 
                 <TextView
+                    android:id="@+id/keluar"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
