@@ -45,7 +45,9 @@
                 android:layout_height="wrap_content"
                 android:hint="Nama lengkap"
                 android:inputType="textPersonName"
-                android:layout_marginBottom="16dp"/>
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
 
             <!-- Email -->
             <EditText
@@ -144,6 +146,7 @@
 
             <!-- Link Masuk -->
             <TextView
+                android:id="@+id/logins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sudah memiliki akun? Masuk disini"
