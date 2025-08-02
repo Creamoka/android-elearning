@@ -26,8 +26,6 @@
         <activity android:name=".RegisterActivity" android:exported="true" />
         <activity android:name=".BerandaActivity" android:exported="true" />
         <activity android:name=".ChatActivity" android:exported="true" />
-        <activity android:name=".KursusActivity" android:exported="true" />
-        <activity android:name=".DetailKursusActivity" android:exported="true" />
         <activity android:name=".ProfileActivity" android:exported="true" />
         <activity android:name=".EditProfileActivity" android:exported="true" />
 
