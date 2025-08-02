@@ -61,7 +61,7 @@
             <!-- Title -->
             <TextView
                 android:id="@+id/tvTitle"
-                android:text="Belajar Java dasar"
+                android:text="Belajar Bahasa Java Dasar Untuk Pemula"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="#000000"

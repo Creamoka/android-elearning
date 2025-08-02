@@ -61,7 +61,7 @@
             <!-- Title -->
             <TextView
                 android:id="@+id/tvTitle"
-                android:text="Belajar Dasar Keamanan Siber"
+                android:text="Mengenal Dasar Keamanan Siber"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="#000000"

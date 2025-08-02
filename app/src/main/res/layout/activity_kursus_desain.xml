@@ -61,7 +61,7 @@
             <!-- Title -->
             <TextView
                 android:id="@+id/tvTitle"
-                android:text="Belajar Dasar Desain Antarmuka"
+                android:text="Belajar Dasar Desain Antarmuka (UI/UX)"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="#000000"
