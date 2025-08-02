@@ -32,7 +32,6 @@ class RegisterActivity : AppCompatActivity() {
         emailInput = findViewById(R.id.emailEditText)
         passwordInput = findViewById(R.id.password)
         confirmPasswordInput = findViewById(R.id.confirmPassword)
-        registerBtn = findViewById(R.id.confirmPassword) // ini nanti kita ganti, ini salah
         showPasswordIcon = findViewById(R.id.showPasswordIcon)
         showConfirmPasswordIcon = findViewById(R.id.showConfirmPasswordIcon)
 
