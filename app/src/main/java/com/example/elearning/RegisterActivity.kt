@@ -2,6 +2,8 @@ package com.example.elearning
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.method.PasswordTransformationMethod
 import android.text.method.HideReturnsTransformationMethod
 import android.util.Log
@@ -20,7 +22,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var showPasswordIcon: ImageView
     private lateinit var showConfirmPasswordIcon: ImageView
-
+    private lateinit var loginLink: TextView
     private var isPasswordVisible = false
     private var isConfirmPasswordVisible = false
 
@@ -28,10 +30,8 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        // Inisialisasi Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-        // Ambil view dari layout
         nameInput = findViewById(R.id.nameEditText)
         emailInput = findViewById(R.id.emailEditText)
         passwordInput = findViewById(R.id.password)
@@ -39,8 +39,12 @@ class RegisterActivity : AppCompatActivity() {
         showPasswordIcon = findViewById(R.id.showPasswordIcon)
         showConfirmPasswordIcon = findViewById(R.id.showConfirmPasswordIcon)
         registerBtn = findViewById(R.id.daftar)
+        loginLink = findViewById(R.id.logins)
 
-        // Toggle password visibility
+        loginLink.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
         showPasswordIcon.setOnClickListener {
             isPasswordVisible = !isPasswordVisible
             togglePasswordVisibility(passwordInput, isPasswordVisible)
@@ -51,73 +55,65 @@ class RegisterActivity : AppCompatActivity() {
             togglePasswordVisibility(confirmPasswordInput, isConfirmPasswordVisible)
         }
 
-        // Klik tombol daftar
         registerBtn.setOnClickListener {
+            Log.d("REGISTER", "Register button clicked")
+
             val name = nameInput.text.toString().trim()
             val email = emailInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
             val confirmPassword = confirmPasswordInput.text.toString().trim()
 
-            // Validasi input
+            Log.d("REGISTER", "Input values - Name: $name, Email: $email, Password length: ${password.length}")
+
             if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+                Log.d("REGISTER", "Empty fields detected")
                 Toast.makeText(this, "Isi semua field terlebih dahulu", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (password.length < 6) {
+                Log.d("REGISTER", "Password too short")
                 Toast.makeText(this, "Password minimal 6 karakter", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (password != confirmPassword) {
+                Log.d("REGISTER", "Password mismatch")
                 Toast.makeText(this, "Password dan konfirmasi tidak cocok", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Proses registrasi akun
+            Log.d("REGISTER", "Starting registration process")
+            Toast.makeText(this, "Sedang mendaftar...", Toast.LENGTH_SHORT).show()
+
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
                     val user = auth.currentUser
                     val uid = user?.uid
-
-                    if (uid == null) {
-                        Log.e("REGISTER", "UID null setelah registrasi")
-                        Toast.makeText(this, "Terjadi kesalahan saat mengambil UID", Toast.LENGTH_SHORT).show()
-                        return@addOnSuccessListener
+                    if (uid != null) {
+                        val userData = mapOf("name" to name, "email" to email)
+                        FirebaseDatabase.getInstance().reference
+                            .child("users").child(uid).setValue(userData)
                     }
-
-                    val userData = mapOf(
-                        "name" to name,
-                        "email" to email
-                    )
-
-                    Log.d("REGISTER", "UID: $uid")
-                    Log.d("REGISTER", "User Data: $userData")
-
-                    val database = FirebaseDatabase.getInstance().reference
-                    database.child("users").child(uid).setValue(userData)
-                        .addOnSuccessListener {
-                            Log.d("REGISTER", "Data berhasil disimpan ke database")
-                            Toast.makeText(this, "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show()
-
-                            // Arahkan ke LoginActivity
-                            val intent = Intent(this, LoginActivity::class.java)
-                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                            startActivity(intent)
-                            finish()
-                        }
-                        .addOnFailureListener { e ->
-                            Log.e("REGISTER", "Gagal simpan ke database: ${e.message}")
-                            Toast.makeText(this, "Gagal menyimpan data pengguna", Toast.LENGTH_LONG).show()
-                        }
                 }
                 .addOnFailureListener { e ->
-                    Log.e("REGISTER", "Gagal daftar: ${e.message}")
-                    Toast.makeText(this, "Gagal mendaftar: ${e.message}", Toast.LENGTH_LONG).show()
+                    Log.e("REGISTER", "Registration failed: ${e.message}")
                 }
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                Toast.makeText(this, "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show()
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                    val intent = Intent(this, LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
+                }, 1000)
+            }, 1500)
         }
     }
 
+    // Menampilkan atau menyembunyikan password
     private fun togglePasswordVisibility(editText: EditText, isVisible: Boolean) {
         editText.transformationMethod = if (isVisible) {
             HideReturnsTransformationMethod.getInstance()
