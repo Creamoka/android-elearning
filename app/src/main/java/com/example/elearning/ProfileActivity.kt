@@ -1,6 +1,5 @@
 package com.example.elearning
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
@@ -8,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -20,29 +20,57 @@ class ProfileActivity : AppCompatActivity() {
         // Inisialisasi Firebase Auth
         auth = FirebaseAuth.getInstance()
 
+        // Load data user dari database saat pertama kali dibuka
+        loadUserProfile()
+
         // Atur item menu profile
         setupMenuItems()
 
-        // Atur navigasi bawah (bottom navigation)
+        // Atur navigasi bawah
         setupBottomNavigation()
     }
 
+    // ⬇️ Tambahkan ini di LUAR onCreate
+    override fun onResume() {
+        super.onResume()
+        loadUserProfile() // Ini akan berjalan saat balik dari edit profile
+    }
+
+    private fun loadUserProfile() {
+        val user = auth.currentUser
+        val uid = user?.uid ?: return
+
+        val database = FirebaseDatabase.getInstance()
+        val userRef = database.getReference("users").child(uid)
+
+        userRef.get().addOnSuccessListener { snapshot ->
+            val name = snapshot.child("name").getValue(String::class.java)
+            val email = snapshot.child("email").getValue(String::class.java)
+
+            val nameTextView = findViewById<TextView>(R.id.nama_pengguna)
+            val emailTextView = findViewById<TextView>(R.id.email_pengguna)
+
+            nameTextView.text = name
+            emailTextView.text = email
+
+        }.addOnFailureListener {
+            Toast.makeText(this, "Gagal memuat profil", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     private fun setupMenuItems() {
-        // Edit profil
         val editProfile = findViewById<ImageView>(R.id.edit_profile)
         editProfile.setOnClickListener {
-            Toast.makeText(this, "Edit Profil diklik", Toast.LENGTH_SHORT).show()
-            // TODO: Navigasi ke halaman edit profil
+            val intent = Intent(this, EditProfileActivity::class.java)
+            startActivity(intent)
         }
 
-        // Menu Sertifikat Saya - Changed from LinearLayout to TextView
         val certificatesMenu = findViewById<TextView>(R.id.sertifikat)
         certificatesMenu.setOnClickListener {
             Toast.makeText(this, "Sertifikat Saya diklik", Toast.LENGTH_SHORT).show()
             // TODO: Navigasi ke halaman sertifikat
         }
 
-        // Menu Logout - Changed from LinearLayout to TextView
         val logoutMenu = findViewById<TextView>(R.id.keluar)
         logoutMenu.setOnClickListener {
             logout()
@@ -50,11 +78,9 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun logout() {
-        // Proses logout dari Firebase
         auth.signOut()
         Toast.makeText(this, "Berhasil logout", Toast.LENGTH_SHORT).show()
 
-        // Navigasi kembali ke halaman login dan bersihkan task
         val intent = Intent(this, LoginActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
@@ -66,23 +92,20 @@ class ProfileActivity : AppCompatActivity() {
         val navChat = findViewById<ImageView>(R.id.nav_chat)
         val navProfile = findViewById<ImageView>(R.id.nav_profile)
 
-        // Navigasi ke halaman Beranda
         navHome.setOnClickListener {
             startActivity(Intent(this, BerandaActivity::class.java))
-            overridePendingTransition(0, 0) // Menghilangkan animasi transisi
+            overridePendingTransition(0, 0)
             finish()
         }
 
-        // Navigasi ke halaman Chat
         navChat.setOnClickListener {
             startActivity(Intent(this, ChatActivity::class.java))
-            overridePendingTransition(0, 0) // Menghilangkan animasi transisi
+            overridePendingTransition(0, 0)
             finish()
         }
 
-        // Sudah berada di halaman profil, tidak melakukan apa-apa
         navProfile.setOnClickListener {
-            // Tidak ada aksi
+            // Sudah di halaman ini
         }
     }
 }
