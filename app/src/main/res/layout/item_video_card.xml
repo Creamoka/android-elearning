@@ -1,0 +1,44 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="4dp"
+    android:layout_marginBottom="8dp"
+    android:padding="12dp"
+    android:radius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Thumbnail -->
+        <View
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#CCCCCC"
+            android:layout_marginEnd="12dp"/>
+
+        <!-- Text -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul Video"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi singkat video yang menjelaskan isi dari materi."
+                android:textColor="#666666"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

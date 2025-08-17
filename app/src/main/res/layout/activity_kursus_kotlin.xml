@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header with Play Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#F5F5F5">
+
+            <!-- Tombol back -->
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_back" />
+
+            <!-- Tombol bookmark -->
+            <ImageButton
+                android:id="@+id/btnBookmark"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_circle_gray"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_bookmark" />
+
+            <!-- Play Button -->
+            <ImageView
+                android:id="@+id/playButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_play"
+                android:background="@drawable/bg_circle_gray"
+                android:padding="16dp" />
+        </RelativeLayout>
+
+        <!-- Content -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:text="Belajar Bahasa Kotlin Dasar untuk Pemula"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Creator -->
+            <TextView
+                android:id="@+id/tvCreator"
+                android:text="Pengajar A"
+                android:textSize="14sp"
+                android:textColor="#555555"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Viewers -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginEnd="6dp"
+                    android:src="@drawable/ic_users"
+                    android:tint="#777777" />
+
+                <TextView
+                    android:id="@+id/tvViewers"
+                    android:text="3,4k penonton telah menyaksikan materi ini"
+                    android:textSize="12sp"
+                    android:textColor="#777777"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Detail Kursus Section -->
+            <TextView
+                android:text="Detail Kursus"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/tvDescription"
+                android:text="Pelajari dasar-dasar bahasa pemrograman Kotlin, bahasa modern yang digunakan untuk mengembangkan aplikasi Android. Materi disusun khusus untuk pemula yang ingin mulai ngoding dengan gaya penulisan yang bersih, simpel, dan efisien."
+                android:textSize="14sp"
+                android:textColor="#444444"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Course Info with Icons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_book"
+                        android:tint="#666666" />
+
+                    <TextView
+                        android:text="50+ Sesi"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_time"
+                        android:tint="#666666" />
+
+                    <TextView
+                        android:text="4 Minggu"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_certificate"
+                        android:tint="#666666" />
+
+                    <TextView
+                        android:text="Sertifikat Online"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Skills Section -->
+            <TextView
+                android:text="Kemampuan"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:text="Pemrograman"
+                    android:background="@drawable/bg_chip"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Logika"
+                    android:background="@drawable/bg_chip"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Struktur"
+                    android:background="@drawable/bg_chip"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Enroll Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEnroll"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="IKUTI KURSUS"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:backgroundTint="#000000"
+                app:cornerRadius="20dp"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:padding="24dp">
+
+            <!-- Judul -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EDIT PROFIL"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Subjudul -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perbarui informasi akunmu."
+                android:textAlignment="center"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Nama Lengkap -->
+            <EditText
+                android:id="@+id/editnama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="alamatemail@gmail.com"
+                android:inputType="textPersonName"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Email -->
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="alamatemail@gmail.com"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Tombol Simpan -->
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIMPAN PERUBAHAN"
+                android:backgroundTint="#000000"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Tombol Batal -->
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BATAL"
+                android:backgroundTint="#888888"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Tombol Hapus Akun -->
+            <Button
+                android:id="@+id/deleteAccountButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HAPUS AKUN"
+                android:backgroundTint="#FF3B30"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

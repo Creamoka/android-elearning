@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:layout_columnWeight="1"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:minHeight="100dp"
+        android:background="#CCCCCC"
+        android:layout_marginBottom="6dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Judul Materi Rekomendasi"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textColor="#000000"/>
+</LinearLayout>
